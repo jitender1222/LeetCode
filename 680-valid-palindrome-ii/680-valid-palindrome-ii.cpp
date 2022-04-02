@@ -1,40 +1,29 @@
 class Solution {
 public:
-    bool validPalindrome(string s) {
-        int start=0;
-        int end=s.length()-1;
-        
-        int cntS=0,cntE=0;
-        
-        while(start<end){
-            if(s[start]==s[end]){
-                start++;end--;}
-            else{
-                start++;
-                cntS++;
-            }
-            if(cntS>1){
-                break;
-            }
-        }
-          start=0;
-          end=s.length()-1;
-        
-          
-        while(start<end){
-            if(s[start]==s[end]){
-                start++;end--;}
-            else{
-                end--;
-                cntE++;
-            }
-            if(cntE>1){
-                break;
-            }
-        }
-        if(cntS==1 || cntE==1)return true;
-        if(cntS ==0 || cntE==0)return true;
-        
-        return false;
+    // bool ispalindrome(int i,int j,string &s,int del)
+    // {
+    //     if(i>=j)return true;
+    //     if(s[i]==s[j]) ispalindrome(i+1,j-1,s,false);
+    //     if(s[i]!=s[j] && del) return false;
+    //     else
+    //         return ispalindrome(i+1,j,s,true) || ispalindrome(i,j-1,s,true);
+    // }
+    // bool validPalindrome(string s) {
+    //     int i=0,j=s.length()-1;
+    //     if(ispalindrome(i,j,s,false)) return true;
+    //     else return false;
+    // }
+         bool possiblepalindrome(string& s,int i,int j,bool skipped)
+    {
+        if(i>=j) return true;
+        if(s[i]==s[j]) return possiblepalindrome(s,i+1,j-1,skipped);
+        if(s[i]!=s[j] && skipped) return false;
+        else return possiblepalindrome(s,i+1,j,true) || possiblepalindrome(s,i,j-1,true);
+    }
+    bool validPalindrome(string s)
+    {
+        int i=0,j=s.size()-1;
+        if(possiblepalindrome(s,i,j,false)) return true;
+        else return false;
     }
 };
