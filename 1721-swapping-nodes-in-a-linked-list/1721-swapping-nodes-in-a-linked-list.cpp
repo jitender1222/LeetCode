@@ -22,15 +22,16 @@ public:
         ListNode* first=head;
         ListNode* second=head;
         int len=find_len(head);
-        for(int i=0;i<k-1;i++){
+        for(int i=1;i<k;i++){
             first=first->next;
         }
-        for(int i=0;i<len-k;i++){
+        for(int i=1;i<len-k+1;i++){
             second=second->next;
         }
         swap(first->val,second->val);
         return head;
     }
+
 };
 
 
