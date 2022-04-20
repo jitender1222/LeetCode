@@ -13,8 +13,8 @@ public:
 	    int ans=0;
 	    unordered_map<char, int>um;
 	    // put all the element into the map ;
-	    for(char a: pat){
-	        um[a]++;
+	    for(int i=0;i<pat.size();i++){
+	        um[pat[i]]++;
 	    }
 	    int k=pat.size();
 	    int i=0,j=0;
