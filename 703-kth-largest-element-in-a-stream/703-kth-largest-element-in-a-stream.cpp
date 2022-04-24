@@ -18,9 +18,10 @@ public:
         return pq.top();
     }
 };
+/* 
+so in this we have to find the kth largest element so basically 1st approach is that we have to sort the array and find the kth element we can do this but timeC goes to NLOGN
+which is not that much good.
 
-/**
- * Your KthLargest object will be instantiated and called as such:
- * KthLargest* obj = new KthLargest(k, nums);
- * int param_1 = obj->add(val);
- */
+2nd approach is to use min heap and here the thing is we have to push the element and chcek if the size of the element is greater than the k value than  we need to pop out from the queue because it is min heap every time the smallest number is on the top so when we doing this in the end when nothing left to add the number we can easily return top element that is our answer.
+*/
+
