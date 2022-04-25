@@ -13,7 +13,7 @@ public:
             
             mp[fruits[j]]++;
             
-            // if(mp.size()<2) j++;
+             // if(mp.size()<2) j++;
             
              if(mp.size()<=2){
                 ans=max(ans,j-i+1);
