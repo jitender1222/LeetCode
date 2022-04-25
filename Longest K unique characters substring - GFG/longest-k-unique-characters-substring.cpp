@@ -16,7 +16,7 @@ class Solution{
     while(j<s.length()){
         mp[s[j]]++;
         
-        if(mp.size()<k) j++;
+         if(mp.size()<k) j++;
     
         if(mp.size()==k){
             ans=max(ans,j-i+1);
