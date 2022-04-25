@@ -42,7 +42,7 @@ public:
 	}
 	
 	bool hasNext() const {
-	    if(i>last) return false;
+        if(i>last)return false;
         return true;
 	}
 };
