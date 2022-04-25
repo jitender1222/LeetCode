@@ -20,14 +20,12 @@
 class PeekingIterator : public Iterator {
 public:
     vector<int>ans;
-    int i,last;
+    int i=0;
 	PeekingIterator(const vector<int>& nums) : Iterator(nums) {
 	    // Initialize any member here.
 	    // **DO NOT** save a copy of nums and manipulate it directly.
 	    // You should only use the Iterator interface methods.
-        i=0;
         ans=nums;
-	    last=ans.size()-1;
 	}
 	
     // Returns the next element in the iteration without advancing the iterator.
@@ -42,7 +40,7 @@ public:
 	}
 	
 	bool hasNext() const {
-        if(i>last)return false;
-        return true;
+       if(i<ans.size())return true;
+        return false;
 	}
 };
